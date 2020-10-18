@@ -1,0 +1,44 @@
+nohup: 忽略输入
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+(?, 50, 800)
+starting loading data
+2018-11-24 17:39:54
+finish loading data
+2018-11-24 17:45:29
+batch_num 15625
+configurations {'data_path': '../../data/ubuntu/data.pkl', 'max_turn_num': 10, 'evaluate_step': 15625, 'filter_size': 3, 'filter_h': 3, 'train_steps': 125000, 'emb_train': False, 'CPU': '/cpu:0', 'embedding_file': '../../data/ubuntu/word_embedding.pkl', 'hidden_embedding_dim': 200, 'epoch': 8, 'lr': 0.001, 'save_path': 'Gcnn_v1_test/version_1/', 'word_layers_enc': 2, 'print_step': 1562, '_EOS_': 28270, 'word_embedding_dim': 200, 'batch_size': 64, 'final_n_class': 1, 'word_layers_agg': 2, 'max_turn_len': 50, 'output_path': 'Gcnn_v1_output/version_1/', 'init_model': 'Gcnn_v1_model/version_1/'}
+2018-11-24 17:45:57.169404: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-24 17:45:57.169422: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-24 17:45:57.169426: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-24 17:45:57.169430: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-24 17:45:57.169433: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-24 17:45:57.276583: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-11-24 17:45:57.277050: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:02:00.0
+Total memory: 7.92GiB
+Free memory: 7.83GiB
+2018-11-24 17:45:57.277063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-11-24 17:45:57.277068: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-11-24 17:45:57.277074: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+starting shuffle train data
+finish building train data
+2018-11-24 17:47:10.953821: W tensorflow/core/common_runtime/bfc_allocator.cc:217] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.78GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory is available.
+2018-11-24 17:47:11.033273: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2196 get requests, put_count=1462 evicted_count=1000 eviction_rate=0.683995 and unsatisfied allocation rate=0.835155
+2018-11-24 17:47:11.033306: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+2018-11-24 17:47:14.643455: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2193 get requests, put_count=2559 evicted_count=2000 eviction_rate=0.781555 and unsatisfied allocation rate=0.752394
+2018-11-24 17:47:14.643492: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 176 to 193
+2018-11-24 17:47:18.549397: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 0 get requests, put_count=1030 evicted_count=1000 eviction_rate=0.970874 and unsatisfied allocation rate=0
+2018-11-24 17:47:23.128949: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2198 get requests, put_count=2080 evicted_count=1000 eviction_rate=0.480769 and unsatisfied allocation rate=0.535487
+2018-11-24 17:47:23.128999: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 655 to 720
+2018-11-24 17:47:37.371624: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 17557 get requests, put_count=17602 evicted_count=1000 eviction_rate=0.0568117 and unsatisfied allocation rate=0.0631657
+2018-11-24 17:47:37.371662: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 1694 to 1863

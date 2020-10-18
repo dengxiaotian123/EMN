@@ -1,0 +1,6 @@
+starting loading data
+2018-11-30 11:21:58
+finish loading data
+2018-11-30 11:27:59
+batch_num 15625
+configurations {'keep_prob': 0.7, 'data_path': '../../data/ubuntu/data.pkl', 'word_layers_itg': 2, 'evaluate_step': 15625, 'filter_size': 3, 'filter_h': 3, 'hidden_embedding_dim': 200, 'emb_train': False, 'embedding_file': '../../data/ubuntu/word_embedding.pkl', 'CPU': '/cpu:0', 'epoch': 4, 'lr': 0.001, 'save_path': 'Gcnn_v3_test/version4/', 'word_layers_enc': 2, 'print_step': 1562, '_EOS_': 28270, 'word_embedding_dim': 200, 'batch_size': 64, 'max_turn_num': 5, 'final_n_class': 1, 'word_layers_agg': 2, 'max_turn_len': 50, 'train_steps': 62500, 'output_path': 'Gcnn_v3_output/version4/', 'init_model': 'Gcnn_v3_model/version4/'}

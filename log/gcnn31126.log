@@ -1,0 +1,219 @@
+nohup: 忽略输入
+starting loading data
+2018-11-26 08:53:32
+finish loading data
+2018-11-26 08:56:12
+batch_num 15625
+configurations {'keep_prob': 0.8, 'data_path': '../../data/douban/data.pkl', 'word_layers_itg': 2, 'evaluate_step': 15625, 'filter_size': 3, 'filter_h': 3, 'hidden_embedding_dim': 200, 'emb_train': False, 'embedding_file': '../../data/douban/word_embedding.pkl', 'CPU': '/cpu:0', 'epoch': 8, 'lr': 0.001, 'save_path': 'Gcnn_v3_test/version_2/', 'word_layers_enc': 2, 'print_step': 1562, '_EOS_': 1, 'word_embedding_dim': 200, 'batch_size': 64, 'max_turn_num': 10, 'final_n_class': 1, 'word_layers_agg': 2, 'max_turn_len': 50, 'train_steps': 125000, 'output_path': 'Gcnn_v3_output/version_2/', 'init_model': 'Gcnn_v3_model/version_2/'}
+2018-11-26 08:56:12.645427: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-26 08:56:12.645445: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-26 08:56:12.645449: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-26 08:56:12.645452: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-26 08:56:12.645455: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-26 08:56:12.876149: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-11-26 08:56:12.876584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:02:00.0
+Total memory: 7.92GiB
+Free memory: 7.83GiB
+2018-11-26 08:56:12.876595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-11-26 08:56:12.876599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-11-26 08:56:12.876605: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+starting shuffle train data
+finish building train data
+2018-11-26 08:57:42.755681: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2007 get requests, put_count=1250 evicted_count=1000 eviction_rate=0.8 and unsatisfied allocation rate=0.925262
+2018-11-26 08:57:42.755710: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+2018-11-26 08:57:45.669096: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2008 get requests, put_count=2340 evicted_count=2000 eviction_rate=0.854701 and unsatisfied allocation rate=0.838645
+2018-11-26 08:57:45.669128: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 176 to 193
+2018-11-26 08:57:48.567718: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 0 get requests, put_count=1030 evicted_count=1000 eviction_rate=0.970874 and unsatisfied allocation rate=0
+2018-11-26 08:57:52.382783: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2014 get requests, put_count=1870 evicted_count=1000 eviction_rate=0.534759 and unsatisfied allocation rate=0.597319
+2018-11-26 08:57:52.382836: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 655 to 720
+2018-11-26 08:57:59.625315: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 8034 get requests, put_count=7770 evicted_count=1000 eviction_rate=0.1287 and unsatisfied allocation rate=0.174757
+2018-11-26 08:57:59.625352: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 1540 to 1694
+epoch=0 step: 1562 loss 0.31463677 processed: [0.099968]
+epoch=0 step: 3124 loss 0.48423886 processed: [0.199936]
+epoch=0 step: 4686 loss 0.35159332 processed: [0.299904]
+epoch=0 step: 6248 loss 0.3032049 processed: [0.399872]
+epoch=0 step: 7810 loss 0.33632192 processed: [0.49984]
+epoch=0 step: 9372 loss 0.424811 processed: [0.599808]
+epoch=0 step: 10934 loss 0.40271527 processed: [0.699776]
+epoch=0 step: 12496 loss 0.27698115 processed: [0.799744]
+epoch=0 step: 14058 loss 0.30187008 processed: [0.899712]
+epoch=0 step: 15620 loss 0.3056833 processed: [0.99968]
+val_loss 1.0807197
+total num: 665
+MAP: 0.531986172678
+MRR: 0.573386442296
+P@1: 0.392481203008
+('R10_1:', 0.2315777539085809)
+('R10_2', 0.3906098579782791)
+('R10_5', 0.7469984485022083)
+('ave:', 0.4778399797285477)
+save evaluate_step: 1
+2018-11-26 11:08:57
+learning rate: 0.001
+starting shuffle train data
+finish building train data
+epoch=1 step: 17182 loss 0.30635718 processed: [1.099648]
+epoch=1 step: 18744 loss 0.29905915 processed: [1.199616]
+epoch=1 step: 20306 loss 0.35547167 processed: [1.299584]
+epoch=1 step: 21868 loss 0.3611001 processed: [1.399552]
+epoch=1 step: 23430 loss 0.35827756 processed: [1.49952]
+epoch=1 step: 24992 loss 0.40877932 processed: [1.599488]
+epoch=1 step: 26554 loss 0.25092086 processed: [1.699456]
+epoch=1 step: 28116 loss 0.2179936 processed: [1.799424]
+epoch=1 step: 29678 loss 0.22446492 processed: [1.899392]
+epoch=1 step: 31240 loss 0.19609877 processed: [1.99936]
+val_loss 1.3284698
+total num: 665
+MAP: 0.540501136392
+MRR: 0.583362573099
+P@1: 0.393984962406
+('R10_1:', 0.22694116242988416)
+('R10_2', 0.41739109678959274)
+('R10_5', 0.7642164936149899)
+('ave:', 0.48773290412191955)
+save evaluate_step: 2
+2018-11-26 13:22:30
+learning rate: 0.001
+0.31156504
+epoch=2 save model
+2018-11-26 13:22:32
+starting shuffle train data
+finish building train data
+epoch=2 step: 32802 loss 0.1770108 processed: [2.099328]
+epoch=2 step: 34364 loss 0.23112999 processed: [2.199296]
+epoch=2 step: 35926 loss 0.24826735 processed: [2.299264]
+epoch=2 step: 37488 loss 0.2634229 processed: [2.399232]
+epoch=2 step: 39050 loss 0.35921988 processed: [2.4992]
+epoch=2 step: 40612 loss 0.3368489 processed: [2.599168]
+epoch=2 step: 42174 loss 0.29866385 processed: [2.699136]
+epoch=2 step: 43736 loss 0.20797811 processed: [2.799104]
+epoch=2 step: 45298 loss 0.15336515 processed: [2.899072]
+epoch=2 step: 46860 loss 0.24934012 processed: [2.99904]
+val_loss 1.3455315
+total num: 665
+MAP: 0.5440457178
+MRR: 0.587231769901
+P@1: 0.403007518797
+('R10_1:', 0.23516171380833026)
+('R10_2', 0.42752715121136153)
+('R10_5', 0.7539408043919323)
+('ave:', 0.4918191126515581)
+save evaluate_step: 3
+2018-11-26 15:37:37
+learning rate: 0.0005
+0.2305063
+epoch=3 save model
+2018-11-26 15:37:38
+starting shuffle train data
+finish building train data
+epoch=3 step: 48422 loss 0.19939807 processed: [3.099008]
+epoch=3 step: 49984 loss 0.20627925 processed: [3.198976]
+epoch=3 step: 51546 loss 0.2364659 processed: [3.298944]
+epoch=3 step: 53108 loss 0.25047457 processed: [3.398912]
+epoch=3 step: 54670 loss 0.26016903 processed: [3.49888]
+epoch=3 step: 56232 loss 0.1389067 processed: [3.598848]
+epoch=3 step: 57794 loss 0.2893029 processed: [3.698816]
+epoch=3 step: 59356 loss 0.18618155 processed: [3.798784]
+epoch=3 step: 60918 loss 0.3745971 processed: [3.898752]
+epoch=3 step: 62480 loss 0.3090849 processed: [3.99872]
+val_loss 1.4008065
+total num: 665
+MAP: 0.54457290311
+MRR: 0.586331901182
+P@1: 0.401503759398
+('R10_1:', 0.2371667263396586)
+('R10_2', 0.4139575128296931)
+('R10_5', 0.7691180331781838)
+('ave:', 0.49210847267292673)
+save evaluate_step: 4
+2018-11-26 17:50:30
+learning rate: 0.0005
+0.30477428
+epoch=4 save model
+2018-11-26 17:50:33
+starting shuffle train data
+finish building train data
+epoch=4 step: 64042 loss 0.10558579 processed: [4.098688]
+epoch=4 step: 65604 loss 0.2170281 processed: [4.198656]
+epoch=4 step: 67166 loss 0.1839359 processed: [4.298624]
+epoch=4 step: 68728 loss 0.1113238 processed: [4.398592]
+epoch=4 step: 70290 loss 0.08929592 processed: [4.49856]
+epoch=4 step: 71852 loss 0.20480035 processed: [4.598528]
+epoch=4 step: 73414 loss 0.18496434 processed: [4.698496]
+epoch=4 step: 74976 loss 0.119011894 processed: [4.798464]
+epoch=4 step: 76538 loss 0.21256092 processed: [4.898432]
+epoch=4 step: 78100 loss 0.30881128 processed: [4.9984]
+val_loss 2.0763593
+total num: 665
+MAP: 0.532052412541
+MRR: 0.574857381549
+P@1: 0.381954887218
+('R10_1:', 0.2212770020288817)
+('R10_2', 0.4007351712614869)
+('R10_5', 0.7567728845924339)
+('ave:', 0.47794162319852274)
+save evaluate_step: 5
+2018-11-26 20:03:13
+learning rate: 0.00025
+0.23379019
+epoch=5 save model
+2018-11-26 20:03:15
+starting shuffle train data
+finish building train data
+epoch=5 step: 79662 loss 0.070014134 processed: [5.098368]
+epoch=5 step: 81224 loss 0.107257836 processed: [5.198336]
+epoch=5 step: 82786 loss 0.14534609 processed: [5.298304]
+epoch=5 step: 84348 loss 0.1875736 processed: [5.398272]
+epoch=5 step: 85910 loss 0.076231 processed: [5.49824]
+epoch=5 step: 87472 loss 0.15843478 processed: [5.598208]
+epoch=5 step: 89034 loss 0.15064928 processed: [5.698176]
+epoch=5 step: 90596 loss 0.14910728 processed: [5.798144]
+epoch=5 step: 92158 loss 0.12286265 processed: [5.898112]
+epoch=5 step: 93720 loss 0.12203839 processed: [5.99808]
+val_loss 2.0763404
+total num: 665
+MAP: 0.533447567094
+MRR: 0.57604845447
+P@1: 0.378947368421
+('R10_1:', 0.21907148824442052)
+('R10_2', 0.4042439431913114)
+('R10_5', 0.7802458527270558)
+('ave:', 0.48200077902459587)
+save evaluate_step: 6
+2018-11-26 22:15:57
+learning rate: 0.00025
+0.2357836
+epoch=6 save model
+2018-11-26 22:15:59
+starting shuffle train data
+finish building train data
+epoch=6 step: 95282 loss 0.068952575 processed: [6.098048]
+epoch=6 step: 96844 loss 0.1154916 processed: [6.198016]
+epoch=6 step: 98406 loss 0.1516929 processed: [6.297984]
+epoch=6 step: 99968 loss 0.14586201 processed: [6.397952]
+epoch=6 step: 101530 loss 0.058680043 processed: [6.49792]
+epoch=6 step: 103092 loss 0.12989593 processed: [6.597888]
+epoch=6 step: 104654 loss 0.084942944 processed: [6.697856]
+epoch=6 step: 106216 loss 0.14974275 processed: [6.797824]
+epoch=6 step: 107778 loss 0.08268274 processed: [6.897792]
+epoch=6 step: 109340 loss 0.086172946 processed: [6.99776]
+val_loss 2.9887395
+total num: 665
+MAP: 0.532953967023
+MRR: 0.574116242988
+P@1: 0.377443609023
+('R10_1:', 0.2212770020288817)
+('R10_2', 0.39962167323069575)
+('R10_5', 0.772838047499702)
+('ave:', 0.4797084236321465)
+save evaluate_step: 7
+2018-11-27 00:28:35
+learning rate: 0.000125
+0.04602632
+epoch=7 save model
+2018-11-27 00:28:37
+starting shuffle train data
+finish building train data

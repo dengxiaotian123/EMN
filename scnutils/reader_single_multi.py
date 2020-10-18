@@ -1,0 +1,215 @@
+#coding=utf-8
+import cPickle as pickle
+import numpy as np
+import copy
+
+def unison_shuffle(data, seed=None):
+    if seed is not None:
+        np.random.seed(seed)
+
+    y = np.array(data['y'])
+    c = np.array(data['c'])
+    r = np.array(data['r'])
+
+    assert len(y) == len(c) == len(r)
+    p = np.random.permutation(len(y))
+    shuffle_data = {'y': y[p], 'c': c[p], 'r': r[p]}
+    return shuffle_data
+
+def split_c(c, split_id):
+    '''c is a list, example context  [int,int,int,eos,int,int,int,int,eos,int]->[[int,int,int],[int,int,int,int],[int]]
+       split_id is a integer, conf[_EOS_] "_EOS_": 28270
+       return nested list 嵌套列表
+    '''
+    turns = [[]]
+    for _id in c: #_id就是具体的每一个wordid
+        if _id != split_id:
+            turns[-1].append(_id)
+        else:
+            turns.append([]) #turns = [[int,int,int],[]]
+    if turns[-1] == [] and len(turns) > 1:
+        turns.pop()
+    return turns
+
+def normalize_length(_list, length, cut_type='tail'):
+    '''_list is a list or nested list, example turns/r/single turn c
+       cut_type is head or tail, if _list len > length is used
+       return a list len=length and min(read_length, length)
+    '''
+    real_length = len(_list) #每一轮对话长短不一
+    if real_length == 0:
+        return [0]*length, 0
+
+    if real_length <= length: #length=max_turn_num=10
+        if not isinstance(_list[0], list):              #不是嵌套类型，single list [int,int,int]
+            _list.extend([0]*(length - real_length))    #[int,int,int,0,0,0,0,0,0,0]
+        else:                                           #嵌套类型
+			#_list=[[int,int,int],[int,int,int,int],[int]]
+            _list.extend([[]]*(length - real_length)) #_list=[[int,int,int],[int,int,int,int],[int]，[],[],[],[]...] 7个[]
+
+        return _list, real_length  #real_length=3
+
+    if cut_type == 'head':#超过10的轮次，则留下开头100个
+        return _list[:length], length
+    if cut_type == 'tail': #留下后10个
+        return _list[-length:], length
+
+def produce_one_sample(data, index, split_id, max_turn_num, max_turn_len, max_single_len,turn_cut_type='tail', term_cut_type='tail'):
+    '''max_turn_num=10
+       max_turn_len=50
+       return y, int 1 or 0
+	   nor_turns_nor_c,[10,50]
+	   nor_r,[50]
+	   turn_len, int:10或者小于10的一个整数
+	   term_len, [int,int,int.....]：元素为50或者小于50的一个整数，长度为10
+	   r_len
+    '''
+    c = data['c'][index]#[int,int,int,eos,int,int,int,int,eos,int]
+    r = data['r'][index][:]
+    s_r=copy.deepcopy(r)
+    y = data['y'][index]
+
+    turns = split_c(c, split_id)#[[int,int,int],[int,int,int,int],[int]]   #转换为嵌套列表
+    #normalize turns_c length, nor_turns length is max_turn_num
+    nor_turns, _ = normalize_length(turns, max_turn_num, turn_cut_type)#对每一context进行统一，不足的补零，多了的掐头去尾
+
+    nor_turns_nor_c = []
+    term_len = []
+    #nor_turn_nor_c length is max_turn_num, element is a list length is max_turn_len
+
+    for c in nor_turns:
+        #nor_c length is max_turn_len
+        nor_c, nor_c_len = normalize_length(c, max_turn_len, term_cut_type) #对context中的每一句子（terms）进行统一，不足的补零，多了的掐头去尾
+        nor_turns_nor_c.append(nor_c)
+        term_len.append(nor_c_len) #记录 real_length
+
+    nor_r, r_len = normalize_length(r, max_turn_len, term_cut_type)
+
+    s_r, s_r_len=normalize_length(s_r, 200, term_cut_type)
+
+    return y, nor_turns_nor_c, nor_r,  term_len, r_len,s_r,s_r_len
+
+def build_one_batch(data, batch_index, conf, turn_cut_type='tail', term_cut_type='tail'):
+    _turns = []
+    _every_turn_len = []
+    _s_turn=[]
+    _s_turn_len=[]
+    _response = []
+    _response_len = []
+    _s_r=[]
+    _s_r_len=[]
+    _label = []
+
+    for i in range(conf['batch_size']):#对每一个样本的处理
+        index = batch_index * conf['batch_size'] + i
+        y, nor_turns_nor_c, nor_r, term_len, r_len,s_r,s_r_len = produce_one_sample(data, index, conf['_EOS_'], conf['max_turn_num'],
+                conf['max_turn_len'], conf['max_single_len'],turn_cut_type, term_cut_type)
+        _slength=0
+        #(10,50)
+        _sturn=[]
+        for n,u in enumerate(nor_turns_nor_c):
+            #u应该是一个长度为50的列表
+            if len(u) != 50:
+                print("length not 50")
+            _sturn.extend(u[:term_len[n]])
+            _slength=_slength+term_len[n]
+        _slen=len(_sturn)
+
+        if _slength!= _slen:
+            print(_slen)
+            print(_slength)
+            exit(1)
+        nor_sturn, nor_slen = normalize_length(_sturn, conf["max_single_len"])
+       # print(nor_sturn)
+      #  print(nor_slen)
+      #  print()
+       # print(nor_turns_nor_c)
+       # print(term_len)
+       # exit(1)
+        _label.append(y)
+        _turns.append(nor_turns_nor_c)
+        _response.append(nor_r)
+        _every_turn_len.append(term_len)
+        _response_len.append(r_len)
+        _s_turn.append(nor_sturn)
+        _s_turn_len.append(nor_slen)
+        _s_r.append(s_r)
+        _s_r_len.append(s_r_len)
+
+    return _turns, _every_turn_len, _response, _response_len, _label,_s_turn,_s_turn_len,_s_r, _s_r_len
+
+    
+
+def build_batches(data, conf, turn_cut_type='tail', term_cut_type='tail'):
+    _turns_batches = []
+    _tt_turns_len_batches = []
+    _every_turn_len_batches = []
+
+    _response_batches = []
+    _response_len_batches = []
+
+    _label_batches = []
+    _s_turn_batches=[]
+    _s_turn_len_batches=[]
+    _s_r_batches = []
+    _s_r_len_batches = []
+    batch_len = len(data['y'])/conf['batch_size']
+	# 50 0 000/256=1953 #舍掉后面的32个
+    for batch_index in range(batch_len):
+        _turns, _every_turn_len, _response, _response_len, _label,_s_turn,_s_turn_len,_s_r,_s_r_len = build_one_batch(data, batch_index, conf, turn_cut_type='tail', term_cut_type='tail')
+
+        _turns_batches.append(_turns)
+        _every_turn_len_batches.append(_every_turn_len)
+
+        _response_batches.append(_response)
+        _response_len_batches.append(_response_len)
+
+        _label_batches.append(_label)
+        _s_turn_batches.append(_s_turn)
+        _s_turn_len_batches.append(_s_turn_len)
+        _s_r_batches.append(_s_r)
+        _s_r_len_batches.append(_s_r_len)
+    ans = { 
+        "turns": _turns_batches,  "every_turn_len":_every_turn_len_batches,
+        "response": _response_batches, "response_len": _response_len_batches, "label": _label_batches,
+        "single_turn":_s_turn_batches,"single_turn_len":_s_turn_len_batches,
+        "single_r":_s_r_batches,"single_r_len":_s_r_len_batches
+    }   
+
+    return ans 
+
+if __name__ == '__main__':
+    conf = { 
+        "batch_size": 256,
+        "max_turn_num": 10, 
+        "max_turn_len": 50, 
+        "_EOS_": 28270,
+    }
+    train, val, test = pickle.load(open('../../data/data_small.pkl', 'rb'))
+    print('load data success')
+    
+    train_batches = build_batches(train, conf)
+    val_batches = build_batches(val, conf)
+    test_batches = build_batches(test, conf)
+    print('build batches success')
+    
+    pickle.dump([train_batches, val_batches, test_batches], open('../../data/batches_small.pkl', 'wb'))
+    print('dump success')
+
+
+        
+
+
+    
+
+
+
+
+
+
+
+
+    
+    
+
+

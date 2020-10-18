@@ -1,0 +1,100 @@
+nohup: 忽略输入
+Using TensorFlow backend.
+('batch_size', 40)
+('filter_size', 16)
+('filter_h', 3)
+('Begin BuildModel', '2018-10-20 13:03:14')
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('matrix.shape', TensorShape([Dimension(None), Dimension(50), Dimension(50), Dimension(2)]))
+('BuildModel successful', '2018-10-20 13:03:16')
+2018-10-20 13:03:16.862473: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-20 13:03:16.862492: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-20 13:03:16.862496: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-20 13:03:16.862499: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-20 13:03:16.862502: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-20 13:03:16.983471: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-10-20 13:03:16.983909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.79GiB
+2018-10-20 13:03:17.076357: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x56449f5a9ba0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2018-10-20 13:03:17.076576: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-10-20 13:03:17.077017: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 1 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:02:00.0
+Total memory: 7.92GiB
+Free memory: 7.83GiB
+2018-10-20 13:03:17.077667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 1 
+2018-10-20 13:03:17.077674: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y Y 
+2018-10-20 13:03:17.077678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 1:   Y Y 
+2018-10-20 13:03:17.077683: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+2018-10-20 13:03:17.077687: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+2018-10-20 13:05:34.946100: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 13300 get requests, put_count=5312 evicted_count=1000 eviction_rate=0.188253 and unsatisfied allocation rate=0.683308
+2018-10-20 13:05:34.946136: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+2018-10-20 13:05:35.214491: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2166 get requests, put_count=3015 evicted_count=1000 eviction_rate=0.331675 and unsatisfied allocation rate=0.0761773
+2018-10-20 13:05:35.214523: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 160 to 176
+2018-10-20 13:05:35.494248: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 4821 get requests, put_count=6824 evicted_count=2000 eviction_rate=0.293083 and unsatisfied allocation rate=0.00373367
+2018-10-20 13:05:35.494280: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 233 to 256
+2018-10-20 13:05:35.751074: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5829 get requests, put_count=9854 evicted_count=4000 eviction_rate=0.405927 and unsatisfied allocation rate=0
+2018-10-20 13:05:36.009583: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5714 get requests, put_count=10742 evicted_count=5000 eviction_rate=0.465463 and unsatisfied allocation rate=0
+2018-10-20 13:05:36.268774: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 6701 get requests, put_count=13731 evicted_count=7000 eviction_rate=0.509795 and unsatisfied allocation rate=0
+2018-10-20 13:05:36.625850: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 19003 get requests, put_count=18603 evicted_count=8000 eviction_rate=0.430038 and unsatisfied allocation rate=0.443772
+2018-10-20 13:05:36.625881: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 372 to 409
+2018-10-20 13:05:36.938796: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2739 get requests, put_count=3779 evicted_count=1000 eviction_rate=0.26462 and unsatisfied allocation rate=0
+2018-10-20 13:05:37.205700: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 4807 get requests, put_count=7851 evicted_count=3000 eviction_rate=0.382117 and unsatisfied allocation rate=0
+2018-10-20 13:05:37.467408: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5769 get requests, put_count=10818 evicted_count=5000 eviction_rate=0.462193 and unsatisfied allocation rate=0
+2018-10-20 13:05:37.726829: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 6731 get requests, put_count=13785 evicted_count=7000 eviction_rate=0.507798 and unsatisfied allocation rate=0
+2018-10-20 13:05:38.129904: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 19740 get requests, put_count=19682 evicted_count=8000 eviction_rate=0.406463 and unsatisfied allocation rate=0.411196
+2018-10-20 13:05:38.129935: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 655 to 720
+2018-10-20 13:05:38.418215: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3544 get requests, put_count=5616 evicted_count=2000 eviction_rate=0.356125 and unsatisfied allocation rate=0
+2018-10-20 13:05:38.680598: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3906 get requests, put_count=7985 evicted_count=4000 eviction_rate=0.500939 and unsatisfied allocation rate=0
+2018-10-20 13:05:38.945944: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3903 get requests, put_count=9990 evicted_count=6000 eviction_rate=0.600601 and unsatisfied allocation rate=0
+2018-10-20 13:05:39.375575: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2904 get requests, put_count=4009 evicted_count=1000 eviction_rate=0.249439 and unsatisfied allocation rate=0
+2018-10-20 13:05:39.647672: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2793 get requests, put_count=5908 evicted_count=3000 eviction_rate=0.507786 and unsatisfied allocation rate=0
+2018-10-20 13:05:39.918354: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 4809 get requests, put_count=10936 evicted_count=6000 eviction_rate=0.548647 and unsatisfied allocation rate=0
+2018-10-20 13:05:40.360661: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2431 get requests, put_count=3585 evicted_count=1000 eviction_rate=0.27894 and unsatisfied allocation rate=0
+2018-10-20 13:05:40.633562: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3114 get requests, put_count=7283 evicted_count=4000 eviction_rate=0.549224 and unsatisfied allocation rate=0
+2018-10-20 13:05:41.081018: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 20983 get requests, put_count=21461 evicted_count=7000 eviction_rate=0.326173 and unsatisfied allocation rate=0.319687
+2018-10-20 13:05:41.081049: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 2049 to 2253
+2018-10-20 13:05:41.364626: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 956 get requests, put_count=4181 evicted_count=3000 eviction_rate=0.717532 and unsatisfied allocation rate=0
+2018-10-20 13:05:41.834167: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 374 get requests, put_count=1646 evicted_count=1000 eviction_rate=0.607533 and unsatisfied allocation rate=0
+2018-10-20 13:05:42.311759: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 19785 get requests, put_count=19620 evicted_count=5000 eviction_rate=0.254842 and unsatisfied allocation rate=0.276169
+2018-10-20 13:05:42.311789: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 3296 to 3625
+2018-10-20 13:05:42.808254: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 19993 get requests, put_count=20552 evicted_count=5000 eviction_rate=0.243285 and unsatisfied allocation rate=0.240234
+2018-10-20 13:05:42.808285: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 3987 to 4385
+2018-10-20 13:05:43.325791: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 736 get requests, put_count=3218 evicted_count=2000 eviction_rate=0.621504 and unsatisfied allocation rate=0
+2018-10-20 13:05:44.551846: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 20014 get requests, put_count=20621 evicted_count=1000 eviction_rate=0.0484943 and unsatisfied allocation rate=0.0548616
+2018-10-20 13:05:44.551875: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 7764 to 8540
+('loss', 0.6931472)
+2018-10-20 13:16:02
+('R10_1', 0.91512)
+('R2_1', 0.92576)
+('loss', 0.6931472)
+2018-10-20 13:34:50
+('R10_1', 0.93946)
+('R2_1', 0.94544)
+('loss', 0.6931472)
+2018-10-20 13:53:41
+('R10_1', 0.91302)
+('R2_1', 0.92306)
+('loss', 0.6931472)
+2018-10-20 14:12:32
+('R10_1', 1.0)
+('R2_1', 1.0)
+0.69314986
+epoch=1 over 
+('loss', 0.69314724)
+2018-10-20 14:40:40
+('R10_1', 1.0)
+('R2_1', 1.0)

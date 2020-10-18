@@ -1,0 +1,147 @@
+nohup: 忽略输入
+starting loading data
+2018-11-21 14:39:28
+finish loading data
+2018-11-21 14:45:12
+batch_num 25000
+configurations {'keep_prob': 0.7, 'data_path': '../../data/ubuntu/data.pkl', 'word_layers_itg': 2, 'evaluate_step': 25000, 'filter_size': 3, 'filter_h': 3, 'hidden_embedding_dim': 200, 'emb_train': False, 'embedding_file': '../../data/ubuntu/word_embedding.pkl', 'CPU': '/cpu:0', 'epoch': 10, 'lr': 0.001, 'save_path': 'Gcnn_v3_test/version4/', 'word_layers_enc': 2, 'print_step': 2500, '_EOS_': 28270, 'word_embedding_dim': 200, 'batch_size': 40, 'max_turn_num': 9, 'final_n_class': 1, 'word_layers_agg': 2, 'max_turn_len': 50, 'train_steps': 250000, 'output_path': 'Gcnn_v3_output/version4/', 'init_model': 'Gcnn_v3_model/version4/'}
+2018-11-21 14:45:40.014145: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-21 14:45:40.014162: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-21 14:45:40.014165: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-21 14:45:40.014169: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-21 14:45:40.014172: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-11-21 14:45:40.134210: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-11-21 14:45:40.134664: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.79GiB
+2018-11-21 14:45:40.134674: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2018-11-21 14:45:40.134678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2018-11-21 14:45:40.134684: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+starting shuffle train data
+finish building train data
+2018-11-21 14:46:52.526509: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1814 get requests, put_count=1235 evicted_count=1000 eviction_rate=0.809717 and unsatisfied allocation rate=0.925579
+2018-11-21 14:46:52.526538: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+2018-11-21 14:46:54.982574: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1814 get requests, put_count=1345 evicted_count=1000 eviction_rate=0.743494 and unsatisfied allocation rate=0.819184
+2018-11-21 14:46:54.982605: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 193 to 212
+2018-11-21 14:46:57.504530: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1826 get requests, put_count=1551 evicted_count=1000 eviction_rate=0.644745 and unsatisfied allocation rate=0.71632
+2018-11-21 14:46:57.504561: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 372 to 409
+2018-11-21 14:47:01.085456: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3629 get requests, put_count=3083 evicted_count=1000 eviction_rate=0.324359 and unsatisfied allocation rate=0.447782
+2018-11-21 14:47:01.085485: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 871 to 958
+epoch=1 step: 2500 loss 0.28330043 processed: [0.1]
+epoch=1 step: 5000 loss 0.2195831 processed: [0.2]
+epoch=1 step: 7500 loss 0.3702473 processed: [0.3]
+epoch=1 step: 10000 loss 0.2938248 processed: [0.4]
+epoch=1 step: 12500 loss 0.24437739 processed: [0.5]
+epoch=1 step: 15000 loss 0.36036888 processed: [0.6]
+epoch=1 step: 17500 loss 0.27625 processed: [0.7]
+epoch=1 step: 20000 loss 0.37447172 processed: [0.8]
+epoch=1 step: 22500 loss 0.21743837 processed: [0.9]
+epoch=1 step: 25000 loss 0.49447265 processed: [1.0]
+('R10_1', 0.7631)
+('R10_2', 0.86924)
+('R10_5', 0.96606)
+('R2_1', 0.93554)
+save evaluate_step: 1
+2018-11-21 18:08:44
+starting shuffle train data
+finish building train data
+epoch=2 step: 27500 loss 0.18189162 processed: [1.1]
+epoch=2 step: 30000 loss 0.35466954 processed: [1.2]
+epoch=2 step: 32500 loss 0.38297108 processed: [1.3]
+epoch=2 step: 35000 loss 0.45698896 processed: [1.4]
+epoch=2 step: 37500 loss 0.22929174 processed: [1.5]
+epoch=2 step: 40000 loss 0.32288745 processed: [1.6]
+epoch=2 step: 42500 loss 0.29717028 processed: [1.7]
+epoch=2 step: 45000 loss 0.33108336 processed: [1.8]
+epoch=2 step: 47500 loss 0.3238334 processed: [1.9]
+epoch=2 step: 50000 loss 0.3042618 processed: [2.0]
+('R10_1', 0.77374)
+('R10_2', 0.8765)
+('R10_5', 0.96886)
+('R2_1', 0.93994)
+save evaluate_step: 2
+2018-11-21 21:31:26
+0.28221783
+epoch=1 save model
+learning rate 0.001
+2018-11-21 21:31:30
+starting shuffle train data
+finish building train data
+epoch=3 step: 52500 loss 0.18920153 processed: [2.1]
+epoch=3 step: 55000 loss 0.31236807 processed: [2.2]
+epoch=3 step: 57500 loss 0.19326489 processed: [2.3]
+epoch=3 step: 60000 loss 0.20850177 processed: [2.4]
+epoch=3 step: 62500 loss 0.32457644 processed: [2.5]
+epoch=3 step: 65000 loss 0.17798454 processed: [2.6]
+epoch=3 step: 67500 loss 0.3241638 processed: [2.7]
+epoch=3 step: 70000 loss 0.21253312 processed: [2.8]
+epoch=3 step: 72500 loss 0.17548077 processed: [2.9]
+epoch=3 step: 75000 loss 0.24743873 processed: [3.0]
+('R10_1', 0.7755)
+('R10_2', 0.87772)
+('R10_5', 0.9693)
+('R2_1', 0.94012)
+save evaluate_step: 3
+2018-11-22 00:53:53
+0.25629094
+epoch=2 save model
+learning rate 0.0005
+2018-11-22 00:53:57
+starting shuffle train data
+finish building train data
+epoch=4 step: 77500 loss 0.43376952 processed: [3.1]
+epoch=4 step: 80000 loss 0.10855933 processed: [3.2]
+epoch=4 step: 82500 loss 0.22265497 processed: [3.3]
+epoch=4 step: 85000 loss 0.3309756 processed: [3.4]
+epoch=4 step: 87500 loss 0.20551164 processed: [3.5]
+epoch=4 step: 90000 loss 0.12560885 processed: [3.6]
+epoch=4 step: 92500 loss 0.19176285 processed: [3.7]
+epoch=4 step: 95000 loss 0.10108993 processed: [3.8]
+epoch=4 step: 97500 loss 0.188723 processed: [3.9]
+epoch=4 step: 100000 loss 0.28077215 processed: [4.0]
+('R10_1', 0.76944)
+('R10_2', 0.87604)
+('R10_5', 0.96808)
+('R2_1', 0.93962)
+save evaluate_step: 4
+2018-11-22 04:15:11
+0.27673736
+epoch=3 save model
+learning rate 0.00025
+2018-11-22 04:15:14
+starting shuffle train data
+finish building train data
+epoch=5 step: 102500 loss 0.06846408 processed: [4.1]
+epoch=5 step: 105000 loss 0.1123659 processed: [4.2]
+epoch=5 step: 107500 loss 0.19907661 processed: [4.3]
+epoch=5 step: 110000 loss 0.1503829 processed: [4.4]
+epoch=5 step: 112500 loss 0.25971627 processed: [4.5]
+epoch=5 step: 115000 loss 0.12527606 processed: [4.6]
+epoch=5 step: 117500 loss 0.12326877 processed: [4.7]
+epoch=5 step: 120000 loss 0.098614156 processed: [4.8]
+epoch=5 step: 122500 loss 0.27814537 processed: [4.9]
+epoch=5 step: 125000 loss 0.17307329 processed: [5.0]
+('R10_1', 0.75716)
+('R10_2', 0.86978)
+('R10_5', 0.96552)
+('R2_1', 0.93578)
+save evaluate_step: 5
+2018-11-22 07:35:40
+0.15357229
+epoch=4 save model
+learning rate 0.000125
+2018-11-22 07:35:44
+starting shuffle train data
+finish building train data
+epoch=6 step: 127500 loss 0.13448872 processed: [5.1]
+epoch=6 step: 130000 loss 0.0604771 processed: [5.2]
+epoch=6 step: 132500 loss 0.30913776 processed: [5.3]
+epoch=6 step: 135000 loss 0.19466326 processed: [5.4]
+epoch=6 step: 137500 loss 0.05964811 processed: [5.5]
+epoch=6 step: 140000 loss 0.14003265 processed: [5.6]
+epoch=6 step: 142500 loss 0.29188183 processed: [5.7]
+epoch=6 step: 145000 loss 0.17787436 processed: [5.8]
+epoch=6 step: 147500 loss 0.12824844 processed: [5.9]

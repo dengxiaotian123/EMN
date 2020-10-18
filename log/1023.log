@@ -1,0 +1,145 @@
+nohup: 忽略输入
+Using TensorFlow backend.
+starting loading data
+2018-10-23 15:55:14
+finish loading data
+2018-10-23 16:00:56
+('batch_num', 12500)
+('configurations', {'save_path': 'Gcnn_test/', '_EOS_': 28270, 'data_path': '../../data/ubuntu/data.pkl', 'max_turn_num': 10, 'batch_size': 80, 'evaluate_step': 12500, 'filter_size': 2, 'final_n_class': 1, 'filter_h': 3, 'train_steps': 62500, 'max_turn_len': 50, 'embedding_file': '../../data/ubuntu/word_embedding.pkl', 'epoch': 5, 'output_path': 'Gcnn_output/', 'init_model': 'Gcnn_model/', 'print_step': 1250})
+2018-10-23 16:01:24.507454: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-23 16:01:24.507472: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-23 16:01:24.507476: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-23 16:01:24.507479: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-23 16:01:24.507482: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-10-23 16:01:24.628399: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-10-23 16:01:24.628840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.79GiB
+2018-10-23 16:01:24.723230: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x5608daadcde0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2018-10-23 16:01:24.723455: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-10-23 16:01:24.723883: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 1 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.683
+pciBusID 0000:02:00.0
+Total memory: 7.92GiB
+Free memory: 7.83GiB
+2018-10-23 16:01:24.724528: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 1 
+2018-10-23 16:01:24.724537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y Y 
+2018-10-23 16:01:24.724541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 1:   Y Y 
+2018-10-23 16:01:24.724547: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+2018-10-23 16:01:24.724551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+starting shuffle train data
+finish building train data
+2018-10-23 16:02:23.434421: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 13310 get requests, put_count=5322 evicted_count=1000 eviction_rate=0.187899 and unsatisfied allocation rate=0.682795
+2018-10-23 16:02:23.434449: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+2018-10-23 16:02:23.691314: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2166 get requests, put_count=3018 evicted_count=1000 eviction_rate=0.331345 and unsatisfied allocation rate=0.0747922
+2018-10-23 16:02:23.691353: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 160 to 176
+2018-10-23 16:02:23.952441: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 4564 get requests, put_count=6567 evicted_count=2000 eviction_rate=0.304553 and unsatisfied allocation rate=0.00394391
+2018-10-23 16:02:23.952471: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 233 to 256
+2018-10-23 16:02:24.188610: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5831 get requests, put_count=9856 evicted_count=4000 eviction_rate=0.405844 and unsatisfied allocation rate=0
+2018-10-23 16:02:24.424784: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5126 get requests, put_count=10154 evicted_count=5000 eviction_rate=0.492417 and unsatisfied allocation rate=0
+2018-10-23 16:02:24.661129: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 6675 get requests, put_count=13705 evicted_count=7000 eviction_rate=0.510762 and unsatisfied allocation rate=0
+2018-10-23 16:02:25.002641: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 18789 get requests, put_count=18415 evicted_count=8000 eviction_rate=0.434428 and unsatisfied allocation rate=0.447443
+2018-10-23 16:02:25.002673: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 372 to 409
+2018-10-23 16:02:25.275101: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5215 get requests, put_count=7255 evicted_count=2000 eviction_rate=0.275672 and unsatisfied allocation rate=0
+2018-10-23 16:02:25.513368: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 4191 get requests, put_count=7235 evicted_count=3000 eviction_rate=0.414651 and unsatisfied allocation rate=0
+2018-10-23 16:02:25.753328: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5102 get requests, put_count=10151 evicted_count=5000 eviction_rate=0.492562 and unsatisfied allocation rate=0
+2018-10-23 16:02:25.995484: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 6029 get requests, put_count=13083 evicted_count=7000 eviction_rate=0.535045 and unsatisfied allocation rate=0
+2018-10-23 16:02:26.363249: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2784 get requests, put_count=3849 evicted_count=1000 eviction_rate=0.259808 and unsatisfied allocation rate=0
+2018-10-23 16:02:26.623077: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2726 get requests, put_count=4798 evicted_count=2000 eviction_rate=0.41684 and unsatisfied allocation rate=0
+2018-10-23 16:02:26.866555: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3080 get requests, put_count=7159 evicted_count=4000 eviction_rate=0.558737 and unsatisfied allocation rate=0
+2018-10-23 16:02:27.114334: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5984 get requests, put_count=13071 evicted_count=7000 eviction_rate=0.535537 and unsatisfied allocation rate=0
+2018-10-23 16:02:27.505471: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 2634 get requests, put_count=3739 evicted_count=1000 eviction_rate=0.267451 and unsatisfied allocation rate=0
+2018-10-23 16:02:27.751802: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1782 get requests, put_count=4897 evicted_count=3000 eviction_rate=0.61262 and unsatisfied allocation rate=0
+2018-10-23 16:02:28.000303: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3476 get requests, put_count=9603 evicted_count=6000 eviction_rate=0.624805 and unsatisfied allocation rate=0
+2018-10-23 16:02:28.400072: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 384 get requests, put_count=1538 evicted_count=1000 eviction_rate=0.650195 and unsatisfied allocation rate=0
+2018-10-23 16:02:28.655432: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1464 get requests, put_count=5633 evicted_count=4000 eviction_rate=0.710101 and unsatisfied allocation rate=0
+2018-10-23 16:02:29.067037: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1013 get requests, put_count=2217 evicted_count=1000 eviction_rate=0.45106 and unsatisfied allocation rate=0
+2018-10-23 16:02:29.327707: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1253 get requests, put_count=5478 evicted_count=4000 eviction_rate=0.730194 and unsatisfied allocation rate=0
+2018-10-23 16:02:29.752688: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 660 get requests, put_count=2932 evicted_count=2000 eviction_rate=0.682128 and unsatisfied allocation rate=0
+2018-10-23 16:02:30.189703: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 385 get requests, put_count=1714 evicted_count=1000 eviction_rate=0.583431 and unsatisfied allocation rate=0
+2018-10-23 16:02:30.643883: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 397 get requests, put_count=1795 evicted_count=1000 eviction_rate=0.557103 and unsatisfied allocation rate=0
+2018-10-23 16:02:31.116533: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 727 get requests, put_count=3209 evicted_count=2000 eviction_rate=0.623247 and unsatisfied allocation rate=0
+2018-10-23 16:02:32.236010: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 20003 get requests, put_count=20572 evicted_count=1000 eviction_rate=0.0486098 and unsatisfied allocation rate=0.0567915
+2018-10-23 16:02:32.236044: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 7764 to 8540
+('epoch=0', 'step:', 1250, 'loss', 0.42521173, 'processed: [0.1]')
+('epoch=0', 'step:', 2500, 'loss', 0.3609577, 'processed: [0.2]')
+('epoch=0', 'step:', 3750, 'loss', 0.43469402, 'processed: [0.3]')
+('epoch=0', 'step:', 5000, 'loss', 0.36023498, 'processed: [0.4]')
+('epoch=0', 'step:', 6250, 'loss', 0.55004525, 'processed: [0.5]')
+('epoch=0', 'step:', 7500, 'loss', 0.38895124, 'processed: [0.6]')
+('epoch=0', 'step:', 8750, 'loss', 0.3440054, 'processed: [0.7]')
+('epoch=0', 'step:', 10000, 'loss', 0.39969802, 'processed: [0.8]')
+('epoch=0', 'step:', 11250, 'loss', 0.27451226, 'processed: [0.9]')
+('epoch=0', 'step:', 12500, 'loss', 0.3579683, 'processed: [1.0]')
+('R10_1', 0.71288)
+('R2_1', 0.91964)
+save evaluate_step: 1
+2018-10-23 16:57:04
+starting shuffle train data
+finish building train data
+('epoch=1', 'step:', 13750, 'loss', 0.35388476, 'processed: [1.1]')
+('epoch=1', 'step:', 15000, 'loss', 0.34142795, 'processed: [1.2]')
+('epoch=1', 'step:', 16250, 'loss', 0.40570948, 'processed: [1.3]')
+('epoch=1', 'step:', 17500, 'loss', 0.41289198, 'processed: [1.4]')
+('epoch=1', 'step:', 18750, 'loss', 0.36603743, 'processed: [1.5]')
+('epoch=1', 'step:', 20000, 'loss', 0.33149505, 'processed: [1.6]')
+('epoch=1', 'step:', 21250, 'loss', 0.2769603, 'processed: [1.7]')
+('epoch=1', 'step:', 22500, 'loss', 0.30700696, 'processed: [1.8]')
+('epoch=1', 'step:', 23750, 'loss', 0.29211605, 'processed: [1.9]')
+('epoch=1', 'step:', 25000, 'loss', 0.31910414, 'processed: [2.0]')
+('R10_1', 0.72664)
+('R2_1', 0.92524)
+save evaluate_step: 2
+2018-10-23 17:52:58
+starting shuffle train data
+finish building train data
+('epoch=2', 'step:', 26250, 'loss', 0.2579982, 'processed: [2.1]')
+('epoch=2', 'step:', 27500, 'loss', 0.4526269, 'processed: [2.2]')
+('epoch=2', 'step:', 28750, 'loss', 0.27734184, 'processed: [2.3]')
+('epoch=2', 'step:', 30000, 'loss', 0.42864335, 'processed: [2.4]')
+('epoch=2', 'step:', 31250, 'loss', 0.3030416, 'processed: [2.5]')
+('epoch=2', 'step:', 32500, 'loss', 0.31930897, 'processed: [2.6]')
+('epoch=2', 'step:', 33750, 'loss', 0.25215697, 'processed: [2.7]')
+('epoch=2', 'step:', 35000, 'loss', 0.40200782, 'processed: [2.8]')
+('epoch=2', 'step:', 36250, 'loss', 0.33255616, 'processed: [2.9]')
+('epoch=2', 'step:', 37500, 'loss', 0.36508793, 'processed: [3.0]')
+('R10_1', 0.72864)
+('R2_1', 0.92634)
+save evaluate_step: 3
+2018-10-23 18:48:42
+starting shuffle train data
+finish building train data
+('epoch=3', 'step:', 38750, 'loss', 0.269233, 'processed: [3.1]')
+('epoch=3', 'step:', 40000, 'loss', 0.2667663, 'processed: [3.2]')
+('epoch=3', 'step:', 41250, 'loss', 0.30918458, 'processed: [3.3]')
+('epoch=3', 'step:', 42500, 'loss', 0.3007453, 'processed: [3.4]')
+('epoch=3', 'step:', 43750, 'loss', 0.27150935, 'processed: [3.5]')
+('epoch=3', 'step:', 45000, 'loss', 0.29690808, 'processed: [3.6]')
+('epoch=3', 'step:', 46250, 'loss', 0.28002954, 'processed: [3.7]')
+('epoch=3', 'step:', 47500, 'loss', 0.26302928, 'processed: [3.8]')
+('epoch=3', 'step:', 48750, 'loss', 0.36787987, 'processed: [3.9]')
+('epoch=3', 'step:', 50000, 'loss', 0.33802205, 'processed: [4.0]')
+('R10_1', 0.73276)
+('R2_1', 0.92756)
+save evaluate_step: 4
+2018-10-23 19:44:21
+starting shuffle train data
+finish building train data
+('epoch=4', 'step:', 51250, 'loss', 0.20183279, 'processed: [4.1]')
+('epoch=4', 'step:', 52500, 'loss', 0.20659891, 'processed: [4.2]')
+('epoch=4', 'step:', 53750, 'loss', 0.31547567, 'processed: [4.3]')
+('epoch=4', 'step:', 55000, 'loss', 0.32570237, 'processed: [4.4]')
+('epoch=4', 'step:', 56250, 'loss', 0.38032836, 'processed: [4.5]')
+('epoch=4', 'step:', 57500, 'loss', 0.27007282, 'processed: [4.6]')
+('epoch=4', 'step:', 58750, 'loss', 0.2665814, 'processed: [4.7]')
+('epoch=4', 'step:', 60000, 'loss', 0.3434798, 'processed: [4.8]')
+('epoch=4', 'step:', 61250, 'loss', 0.36308488, 'processed: [4.9]')
+('epoch=4', 'step:', 62500, 'loss', 0.43349805, 'processed: [5.0]')
+('R10_1', 0.73596)
+('R2_1', 0.92684)
+save evaluate_step: 5
+2018-10-23 20:39:32
