@@ -14,11 +14,11 @@ MOVING_AVERAGE_DECAY = 0.997
 BN_EPSILON = 0.001
 variance_scaling_initializer = tf.contrib.layers.variance_scaling_initializer(factor=1.0, mode='FAN_IN', uniform=False)
 conf = {
-    "data_path": "../../data/douban/data.pkl",
+    "data_path": "../data/douban/data.pkl",
     "save_path": "Gcnn_v3_test/version_4/",
     "output_path":"Gcnn_v3_output/version_4/",
     "init_model": "Gcnn_v3_model/version_4/",  # should be set for test
-    "embedding_file": "../../data/douban/word_embedding.pkl",
+    "embedding_file": "../data/douban/word_embedding.pkl",
     "CPU":"/cpu:0", #'/gpu:1'
     "emb_train":False,
     "word_embedding_dim":200,

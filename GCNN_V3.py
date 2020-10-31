@@ -9,16 +9,16 @@ import os
 import time
 import scnutils.reader as reader
 import scnutils.douban_evaluation as douban_evaluation
-os.environ['CUDA_VISIBLE_DEVICES']='1'
+os.environ['CUDA_VISIBLE_DEVICES']='6'
 MOVING_AVERAGE_DECAY = 0.997
 BN_EPSILON = 0.001
 variance_scaling_initializer = tf.contrib.layers.variance_scaling_initializer(factor=1.0, mode='FAN_IN', uniform=False)
 conf = {
-    "data_path": "../../data/douban/data.pkl",
+    "data_path": "../data/ubuntu/data.pkl",
     "save_path": "Gcnn_v3_test/version_2/",
     "output_path":"Gcnn_v3_output/version_2/",
     "init_model": "Gcnn_v3_model/version_2/",  # should be set for test
-    "embedding_file": "../../data/douban/word_embedding.pkl",
+    "embedding_file": "../data/ubuntu/word_embedding.pkl",
     "CPU":"/cpu:0", #'/gpu:1'
 
     "emb_train":False,
@@ -176,7 +176,7 @@ class MyModel(object):
             '''
             input_shape = inputs.get_shape().as_list()
             assert len(input_shape) == 3
-            dim = int(input_shape[2])  # dim=900
+            dim = input_shape[2]  # dim=900
 
             # input_gate = inputs[:,:,0:dim/4]
             forget_gate = inputs[:, :, 0:dim / 3]  # (64, 50, 300)
